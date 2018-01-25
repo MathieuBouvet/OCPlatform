@@ -18,6 +18,13 @@ oc_plateform_add:
     path: /add
     defaults: { _controller:OCPlateformBundle:Advert:add }
 
+oc_plateform_edit:
+    path: /edit/{id}
+    defaults: 
+        _controller: OCPlateformBundle:Advert:edit
+    requirements:
+        id: \d+
+
 oc_plateform_view_slug:
     path: /{year}/{slug}.{_format}
     defaults: 
