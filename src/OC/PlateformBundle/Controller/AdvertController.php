@@ -14,11 +14,5 @@ class AdvertController extends Controller{
 		return new Response($content);
 	}
 
-	public function ByeAction(){
-		$content = $this
-			->get('templating')
-			->render('OCPlateformBundle:ADvert:bye.html.twig');
-		return new Response($content);
-		
-	}
+	
 }
