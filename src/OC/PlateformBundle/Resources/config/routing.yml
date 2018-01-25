@@ -2,3 +2,7 @@
 oc_plateform_home:
     path: /plateform
     defaults: { _controller:OCPlateformBundle:Advert:index }
+
+oc_plateform_view:
+    path: /plateform/advert/{id}
+    defaults: { _controller:OCPlateformBundle:Advert:view }
