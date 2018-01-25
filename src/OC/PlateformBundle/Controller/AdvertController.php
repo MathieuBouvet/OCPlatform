@@ -18,7 +18,10 @@ class AdvertController extends Controller{
 	public function viewAction($id, Request $request){
 
 		$tag = $request->query->get('tag');
-		return new Response("L'annonce à afficher : ".$id." avec le tag : ".$tag);
+		return $this->render('OCPlateformBundle:Advert:view.html.twig',array(
+			'id' => $id,
+			'tag' => $tag
+		));
 	}
 
 	public function viewSlugAction($year,$slug,$_format){
