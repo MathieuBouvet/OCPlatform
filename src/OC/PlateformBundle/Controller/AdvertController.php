@@ -16,7 +16,12 @@ class AdvertController extends Controller{
 
 	public function viewAction($id){
 
-		return new Response("L'annonce à afficher ".$id);
+		return new Response("L'annonce à afficher : ".$id);
+	}
+
+	public function viewSlug($year,$slug,$format){
+
+		return new Response("On afficherait l'annonce datant de l'année ".$year.", ayant le nom ".$slug.".".$format);
 	}
 	
 }
