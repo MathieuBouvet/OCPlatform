@@ -3,6 +3,7 @@
 namespace OC\PlateformBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 
@@ -14,9 +15,10 @@ class AdvertController extends Controller{
 		return new Response($content."<div> La page : ".$page." </div>");
 	}
 
-	public function viewAction($id){
+	public function viewAction($id, Request $request){
 
-		return new Response("L'annonce à afficher : ".$id);
+		$tag = $request->query->get('tag');
+		return new Response("L'annonce à afficher : ".$id." avec le tag : ".$tag);
 	}
 
 	public function viewSlugAction($year,$slug,$_format){
