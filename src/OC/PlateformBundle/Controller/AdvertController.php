@@ -19,5 +19,6 @@ class AdvertController extends Controller{
 			->get('templating')
 			->render('OCPlateformBundle:ADvert:bye.html.twig');
 		return new Response($content);
+		
 	}
 }
