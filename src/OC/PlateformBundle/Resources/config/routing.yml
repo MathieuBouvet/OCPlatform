@@ -25,6 +25,13 @@ oc_plateform_edit:
     requirements:
         id: \d+
 
+oc_plateform_delete:
+    path: /delete/{id}
+    defaults:
+        _controller: OCPlateformBundle:Advert:delete
+    requirements:
+        id: \d+
+
 oc_plateform_view_slug:
     path: /{year}/{slug}.{_format}
     defaults: 
