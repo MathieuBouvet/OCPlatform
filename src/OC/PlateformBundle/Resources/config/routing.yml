@@ -4,10 +4,15 @@ oc_plateform_home:
     defaults: 
         _controller: OCPlateformBundle:Advert:index
         page: 1
+    requirements:
+        page: \d+
 
 oc_plateform_view:
     path: /advert/{id}
-    defaults: { _controller:OCPlateformBundle:Advert:view }
+    defaults: 
+        _controller: OCPlateformBundle:Advert:view
+    requirements:
+        page: \d+
 
 oc_plateform_add:
     path: /add

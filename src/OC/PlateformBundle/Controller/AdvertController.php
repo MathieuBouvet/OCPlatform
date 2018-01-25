@@ -23,7 +23,4 @@ class AdvertController extends Controller{
 
 		return new Response("<body>On afficherait l'annonce datant de l'année ".$year.", ayant le nom ".$slug.".".$_format."</body>");
 	}
-	plublic function etgethethrthrthrt(){
-		
-	}
 }
