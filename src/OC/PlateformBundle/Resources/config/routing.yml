@@ -15,6 +15,7 @@ oc_plateform_view_slug:
     path: /plateform/{year}/{slug}.{format}
     defaults: 
         _controller: OCPlateformBundle:Advert:viewSlug
+        format: html
     requirements:
         year: \d{4}
         format: html|xml
