@@ -14,5 +14,9 @@ class AdvertController extends Controller{
 		return new Response($content);
 	}
 
+	public function viewAction($id){
+
+		return new Response("L'annonce à afficher ".$id);
+	}
 	
 }
