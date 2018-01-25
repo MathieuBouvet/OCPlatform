@@ -1,8 +1,2 @@
-hello_the_world:
-    path: /hello-world
-    defaults: { _controller: OCPlateformBundle:Advert:index }
 
-bye_bye_the_world:
-  path: /bye-bye-world
-  defaults: { _controller: OCPlateformBundle:Advert:bye }
 
