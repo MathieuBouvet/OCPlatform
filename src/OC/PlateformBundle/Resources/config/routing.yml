@@ -1,2 +1,4 @@
-
-
+#src/OC/PlateformBundle/Ressources/Config/routing.yml
+oc_plateform_home:
+    path: /plateform
+    defaults: { _controller:OCPlateformBundle:Advert:index }
