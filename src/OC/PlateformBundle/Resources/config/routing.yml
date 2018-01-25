@@ -1,6 +1,4 @@
 oc_plateform_homepage:
-    path:     /
-    defaults: { _controller: OCPlateformBundle:Default:index }
 
 hello_the_world:
     path: /hello-world
