@@ -14,5 +14,10 @@
 			    sans tag
 			{% endif %}
 		</div>
+		<div>
+			{% for info in app.session.flashbag.get('info') %}
+			    <p>{{ info }}</p>
+			{% endfor %}
+		</div>
 	</body>
 </html>
