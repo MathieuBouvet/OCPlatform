@@ -34,6 +34,6 @@ class AdvertController extends Controller{
 		$session->getFlashBag()->add('info',"annonce enregistrée");
 		$session->getFlashBag()->add('info',"deuxieme message pour confirmation");
 
-		return new Response($this->render('OCPlateformBundle:Advert:add.html.twig'));
+		return $this->redirectToRoute('oc_plateform_view',array('id'=>5));
 	}
 }
