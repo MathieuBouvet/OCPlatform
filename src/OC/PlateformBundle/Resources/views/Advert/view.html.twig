@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>
+			Annonce {{ id }}
+		</title>
+	</head>
+	<body>
+		<h1>L'annonce n° {{ id }}</h1>
+		<div>
+			{% if tag != "" %}
+				Avec le tag {{ tag }}
+			{% else %}
+			    sans tag
+			{% endif %}
+		</div>
+	</body>
+</html>
