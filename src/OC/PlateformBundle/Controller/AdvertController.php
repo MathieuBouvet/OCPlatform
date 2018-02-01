@@ -28,10 +28,16 @@ class AdvertController extends Controller{
 	}
 
 	public function addAction(Request $request){
-		$session = $request->getSession();
-		$session->getFlashBag()->add('info',"annonce enregistrée");
-		$session->getFlashBag()->add('info',"deuxieme message pour confirmation");
+		if($request->isMethod('POST')){
+			$session = $request->getSession();
+			$session->getFlashBag()->add('info',"annonce enregistrée");
+			$session->getFlashBag()->add('info',"deuxieme message pour confirmation");
+			return $this->redirectToRoute('oc_plateform_view',array('id'=>5));
 
-		return $this->redirectToRoute('oc_plateform_view',array('id'=>5));
+		}else{
+			return $this->render('OCPlateformBundle:Advert:add.html.twig');
+		}
+
+
 	}
 }
