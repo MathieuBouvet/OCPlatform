@@ -1,0 +1,7 @@
+<ul class="nav nav-pills flex-column">
+	{% for advert in listAdvert %}
+		<li class="nav-item">
+			<a class="nav-link" href="{{ path('oc_plateform_view',{'id': advert.id}) }}">{{ advert.title }}</a>
+		</li>
+	{%endfor %}
+</ul>
