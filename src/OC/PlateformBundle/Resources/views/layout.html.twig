@@ -5,6 +5,9 @@
 		<title>{% block title %}OC Plateform{% endblock %}</title>
 	</head>
 	<body>
+		<div id="menu">
+			{{ render(controller("OCPlateformBundle:Advert:menu")) }}
+		</div>
 		{% block body %}
 		    
 		{% endblock %}
