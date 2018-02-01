@@ -12,7 +12,7 @@ oc_plateform_view:
     defaults: 
         _controller: OCPlateformBundle:Advert:view
     requirements:
-        page: \d+
+        page: \d*
 
 oc_plateform_add:
     path: /add
