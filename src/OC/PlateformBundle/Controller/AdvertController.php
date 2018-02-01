@@ -37,7 +37,14 @@ class AdvertController extends Controller{
 		}else{
 			return $this->render('OCPlateformBundle:Advert:add.html.twig');
 		}
+	}
 
-
+	public function editAction($id, Request $request){
+		if($request->isMethod('POST')){
+			$request->getSession()->getFlashBag()->add('notice','Annonce bien modifiée');
+			$this->redirectToRoute('oc_plateform_view',array('id'=>$id));
+		}else{
+			return $this->render('OCPlateformBundle:Advert:edit.html.twig',array('id'=>$id));
+		}
 	}
 }
