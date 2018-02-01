@@ -14,10 +14,7 @@ class AdvertController extends Controller{
 		if($page < 1){
 			throw new NotFoundHttpException('Page '.$page." inexistante");
 		}else{
-			$content = $this
-				->get('templating')
-				->render('OCPlateformBundle:Advert:index.html.twig',array('nom' => 'Moi'));
-			return new Response($content."<div> La page : ".$page." </div>");
+			return $this->render('OCPlateformBundle:Advert:index.html.twig',array('nom'=>'Moi'));
 		}
 	}
 
