@@ -47,4 +47,9 @@ class AdvertController extends Controller{
 			return $this->render('OCPlateformBundle:Advert:edit.html.twig',array('id'=>$id));
 		}
 	}
+
+	public function DeleteAction($id){
+
+		return $this->render('OCPlateformBundle:Advert:delete.html.twig',array('id'=>$id));
+	}
 }
