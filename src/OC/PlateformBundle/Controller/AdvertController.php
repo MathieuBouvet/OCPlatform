@@ -52,4 +52,16 @@ class AdvertController extends Controller{
 
 		return $this->render('OCPlateformBundle:Advert:delete.html.twig',array('id'=>$id));
 	}
+
+	public function menuAction(){
+
+		$listAdvert = array(
+			array("id" => 2, "title" => "Recherche dev "),
+			array("id" => 3, "title" => "Mission dev"),
+			array("id" => 8, "title" => "recherche stagiaire")
+		);
+		return $this->render('OCPlateformBundle:Advert:menu.html.twig',array(
+			"listAdvert" => $listAdvert
+		));
+	}
 }
