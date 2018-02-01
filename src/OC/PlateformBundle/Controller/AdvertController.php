@@ -24,11 +24,6 @@ class AdvertController extends Controller{
 		));
 	}
 
-	public function viewSlugAction($year,$slug,$_format){
-
-		return new Response("<body>On afficherait l'annonce datant de l'année ".$year.", ayant le nom ".$slug.".".$_format."</body>");
-	}
-
 	public function addAction(Request $request){
 		$session = $request->getSession();
 		$session->getFlashBag()->add('info',"annonce enregistrée");
