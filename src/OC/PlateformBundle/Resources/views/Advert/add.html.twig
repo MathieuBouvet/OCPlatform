@@ -1,27 +1,13 @@
 {# src/OC/PlatformBundle/Resources/views/Advert/index.html.twig #}
+{% extends 'OCPlateformBundle::layout.html.twig' %}
+{%block title %}{{ parent() }} - Ajout d'annonce {% endblock %}
 
+{% block body %}
+    <h1>Ajouter une annonce</h1>
 
-<!DOCTYPE html>
-
-<html>
-
-  <head>
-
-    <title>Ajout d'annonces !</title>
-
-  </head>
-
-  <body>
-
-    <h1>Hello !</h1>
-
+    {% include 'OCPlateformBundle:Advert:form.html.twig' %}
 
     <p>
-
-      page d'ajout d'annonce
-
+    	attention cette annonce sera ajoutée!
     </p>
-
-  </body>
-
-</html>
+{% endblock %}
