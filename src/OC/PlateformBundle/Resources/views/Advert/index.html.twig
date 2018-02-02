@@ -1,9 +1,9 @@
 {% extends 'OCPlateformBundle::layout.html.twig' %}
 {% block title %}Accueil - {{ parent() }}{% endblock %}
-{% block oc_plateforme_body %}
+{% block oc_plateform_body %}
     <h2>Listes des annonces</h2>
     <ul>
-        {% for adverts in listAdvert %}
+        {% for advert in listAdvert %}
             <li>
                 <a href="{{ path('oc_plateform_view',{'id':advert.id}) }}">
                     {{ advert.title }}
@@ -12,7 +12,7 @@
                 le {{ advert.date|date('d/m/Y') }}
             </li>
             {%  else %}
-                <li>Pas encore d'annonces...</li>
+            <li>Pas encore d'annonces...</li>
         {% endfor %}
     </ul>
 {% endblock %}
