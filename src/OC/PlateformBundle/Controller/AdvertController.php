@@ -43,11 +43,41 @@ class AdvertController extends Controller{
 
 	public function viewAction($id, Request $request){
 
-		$tag = $request->query->get('tag');
-		return $this->render('OCPlateformBundle:Advert:view.html.twig',array(
-			'id' => $id,
-			'tag' => $tag
-		));
+		switch ($id) {
+			case '1':
+				$advert = array(
+					'title' => "Recherche développpeur Symfony",
+					'id' => "1",
+					'author' => "Alexandre",
+					'content' => "Nous recherchons un développeur Symfony débutant sur Lyon. Blabla…'",
+					'date' => new \DateTime()
+				);
+				break;
+
+			case '2':
+				$advert = array(
+					'title' => "Mission de webmaster",
+					'id' => "2",
+					'author' => "Hugo",
+					'content' => "Nous recherchons un webmaster capable de maintenir notre site internet. Blabla…",
+					'date' => new \DateTime()
+				);
+				break;
+
+			case '3':
+				$advert = array(
+					'title' => "Offre de stage webdesigner",
+					'id' => "3",
+					'author' => "Mathieu",
+					'content' => "Nous proposons un poste pour webdesigner. Blabla…",
+					'date' => new \DateTime()
+				);
+				break;
+			default:
+				throw new NotFoundHttpException("L'annonce n° ".$id." n'existe pas...");
+				break;
+		}
+		return $this->render('OCPlateformBundle:Advert:view.html.twig',array("advert"=>$advert));
 	}
 
 	public function addAction(Request $request){
