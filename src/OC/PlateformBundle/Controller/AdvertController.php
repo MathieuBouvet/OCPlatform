@@ -14,9 +14,30 @@ class AdvertController extends Controller{
 		if($page < 1){
 			throw new NotFoundHttpException('Page '.$page." inexistante");
 		}else{
-			return $this->render('OCPlateformBundle:Advert:index.html.twig',array(
-				'listAdvert'=>array()
-			));
+			$listAdvert = array(
+				array(
+					'title' => "Recherche développpeur Symfony",
+					'id' => "1",
+					'author' => "Alexandre",
+					'content' => "Nous recherchons un développeur Symfony débutant sur Lyon. Blabla…'",
+					'date' => new \DateTime()
+				),
+				array(
+					'title' => "Mission de webmaster",
+					'id' => "2",
+					'author' => "Hugo",
+					'content' => "Nous recherchons un webmaster capable de maintenir notre site internet. Blabla…",
+					'date' => new \DateTime()
+				),
+				array(
+					'title' => "Offre de stage webdesigner",
+					'id' => "3",
+					'author' => "Mathieu",
+					'content' => "Nous proposons un poste pour webdesigner. Blabla…",
+					'date' => new \DateTime()
+				)
+			);
+			return $this->render('OCPlateformBundle:Advert:index.html.twig',array('listAdvert' => $listAdvert));
 		}
 	}
 
