@@ -1,23 +1,14 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>
-			Annonce {{ id }}
-		</title>
-	</head>
-	<body>
-		<h1>L'annonce n° {{ id }}</h1>
-		<div>
-			{% if tag != "" %}
-				Avec le tag {{ tag }}
-			{% else %}
-			    sans tag
-			{% endif %}
-		</div>
-		<div>
-			{% for info in app.session.flashbag.get('info') %}
-			    <p>{{ info }}</p>
-			{% endfor %}
-		</div>
-	</body>
-</html>
+{% extends 'OCPlateformBundle::layout.html.twig' %}
+{% block title %}Vue - {{ parent() }}{% endblock %}
+{% block oc_plateform_body %}
+    <h2>{{ advert.title }}</h2>
+    <i>Par {{ advert.author }} le {{ advert.date|date('d/m/Y') }}</i>
+    <div class="alert alert-secondary">
+    	{{ advert.content }}
+    </div>
+    <div>
+    	<a href="{{ path('oc_plateform_home') }}" class="btn btn-light border"><span class="fas fa-chevron-left"></span> Retour</a>
+    	<a href="{{ path('oc_plateform_edit',{'id':advert.id}) }}" class="btn btn-light border"><span class="far fa-edit"></span> Modifier</a>
+    	<a href="{{ path('oc_plateform_delete',{'id':advert.id}) }}" class="btn btn-danger"><span class="fas fa-trash"></span> Supprimer</a>
+    </div>
+{% endblock %}
