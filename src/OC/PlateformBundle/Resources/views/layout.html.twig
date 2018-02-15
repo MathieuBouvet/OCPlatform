@@ -5,7 +5,12 @@
 
 	<hr>
 
-	{% block oc_plateform_body %}
-	    
-	{% endblock %}
+	{% block oc_plateform_body %}{% endblock %}
+	<div>
+		{% block oc_plateform_bottom_buttons %}
+		
+			<a href="{{ path('oc_plateform_home') }}" class="btn btn-light border mr-2"><span class="fas fa-chevron-left"></span> Retour</a>
+			
+		{% endblock %}
+	</div>
 {% endblock %}
