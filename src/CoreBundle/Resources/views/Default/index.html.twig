@@ -1,5 +1,11 @@
 {% extends 'CoreBundle::layout.html.twig' %}
+{% block title %}Accueil - {{ parent() }}{% endblock %}
 {% block body %}
+	{% for msg in app.session.flashBag.get('info') %}
+	    <div class="alert alert-info">
+	    	{{ msg }}
+	    </div>
+	{% endfor %}
 	<h2>Les 3 dernières Annonces de la plateforme</h2>
 	<div class="d-flex flex-column justify-content-around">
 	    {% for advert in adverts %}
@@ -8,7 +14,7 @@
 					<div class="card-block">
 						<h4 class="card-title"><a href="{{ path('oc_plateform_view',{id:advert.id}) }}">{{ advert.title }}</a></h4>
 						<p class="card-text">{{ advert.content }}</p>
-						<p class="card-text"><small class="text-muted">le {{ advert.date|date('d.m.Y') }} par {{ advert.author }}</small></p>
+						<p class="card-text"><small class="text-muted font-italic">le {{ advert.date|date('d-m-Y') }} par {{ advert.author }}</small></p>
 					</div>
 				</div>
 	    	{% endif %}
