@@ -25,13 +25,17 @@
 			</div>
 			<div class="row">
 				<div id="menu" class="col-md-3">
+					<h3>La plateforme</h3>
+					<ul class="nav nav-pills flex-column">
+						<li class="nav-item"><a href="{{ path('core_homepage') }}" class="nav-link">Accueil</a></li>
+					</ul>
 					<h3>Les annonces</h3>
 					<ul class="nav nav-pills flex-column">
 						<li class="nav-item"><a class="nav-link" href="{{ path('oc_plateform_home') }}">Accueil</a></li>
 						<li class="nav-item"><a class="nav-link" href="{{ path('oc_plateform_add') }}">Ajouter une annonce</a></li>
 					</ul>
 
-					<h4>Dernières Annonces</h4>
+					<h3>Dernières Annonces</h3>
 					{{ render(controller('OCPlateformBundle:Advert:menu', {limit: 3})) }}
 				</div>
 				<div id="content" class="col-md-9">
